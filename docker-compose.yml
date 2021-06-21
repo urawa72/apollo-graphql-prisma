@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: mysql_prisma_host
+    restart: always
+    env_file: ./docker/mysql/env
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_prisma_data:/var/lib/mysql
+      - ./docker/mysql:/etc/mysql
+
+volumes:
+  mysql_prisma_data:
+    driver: local
