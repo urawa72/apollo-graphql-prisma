@@ -1,6 +1,5 @@
-const hello = (msg: string): string => {
-  return `Hello ${msg}!`;
-};
+import { startApolloServer } from './apolloServer';
 
-const msg = 'World!';
-console.log(hello(msg));
+console.log(process.version, 'node version');
+
+startApolloServer();
